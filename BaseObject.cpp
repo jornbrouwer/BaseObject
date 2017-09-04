@@ -5,18 +5,19 @@
  *      Author: jornbrouwer
  */
 
-#include <iostream>
-
 #include "BaseObject.h"
 
 BaseObject::BaseObject()
 {
-	std::cout << "base object generated" << std::endl;
-
+	#ifdef DEBUG
+		std::cout << "base object generated" << std::endl;
+	#endif
 }
 
 BaseObject::~BaseObject()
 {
-	std::cout << "Base object deleted" << std::endl;
+	#ifdef DEBUG
+		std::cout << "Base object deleted" << std::endl;
+	#endif
 }
 
