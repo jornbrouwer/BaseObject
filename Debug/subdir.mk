@@ -4,12 +4,18 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../BaseObject.cpp \
+../BaseObject_test.cpp \
 ../main.cpp 
 
 OBJS += \
+./BaseObject.o \
+./BaseObject_test.o \
 ./main.o 
 
 CPP_DEPS += \
+./BaseObject.d \
+./BaseObject_test.d \
 ./main.d 
 
 

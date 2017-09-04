@@ -7,9 +7,12 @@
 
 #include <iostream>
 
+#include "BaseObject.h"
+
 int main(int argc, char **argv)
 {
 	std::cout << "program started" << std::endl;
+
 	return 0;
 }
 
