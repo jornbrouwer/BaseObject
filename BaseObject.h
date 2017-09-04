@@ -11,8 +11,8 @@
 class BaseObject
 {
 public:
-	BaseObject();
-	virtual ~BaseObject();
+	BaseObject(); 			//Constructor
+	virtual ~BaseObject(); 	//Destructor
 };
 
 #endif /* BASEOBJECT_H_ */

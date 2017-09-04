@@ -13,6 +13,8 @@ int main(int argc, char **argv)
 {
 	std::cout << "program started" << std::endl;
 
+	BaseObject b;
+
 	return 0;
 }
 

@@ -5,16 +5,18 @@
  *      Author: jornbrouwer
  */
 
+#include <iostream>
+
 #include "BaseObject.h"
 
 BaseObject::BaseObject()
 {
-	// TODO Auto-generated constructor stub
+	std::cout << "base object generated" << std::endl;
 
 }
 
 BaseObject::~BaseObject()
 {
-	// TODO Auto-generated destructor stub
+	std::cout << "Base object deleted" << std::endl;
 }
 
