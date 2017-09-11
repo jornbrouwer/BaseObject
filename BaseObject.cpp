@@ -15,7 +15,7 @@
 BaseObject::BaseObject()
 {
 	#ifdef DEBUG
-		std::cout << "standard bbase object generated" << std::endl;
+		std::cout << "standard base object generated" << std::endl;
 	#endif
 }
 

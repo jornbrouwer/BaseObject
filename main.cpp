@@ -9,7 +9,8 @@
 #include <iostream>
 
 //Local includes
-#include "BaseObject.h"
+//#include "BaseObject.h"
+#include "DerivedObject.h"
 #include "config.h"
 
 int main(int argc, char **argv)
@@ -18,11 +19,12 @@ int main(int argc, char **argv)
 		std::cout << "program started" << std::endl;
 	#endif
 
-	BaseObject a("A");
-	BaseObject b("B");
-	BaseObject c(b);
+	BaseObject z("A");
+	//BaseObject b("B");
+	//BaseObject c(b);
 
-
+	DerivedObject a;
+	std::cout << a << std::endl;
 
 	#ifdef DEBUG
 		std::cout << "program ended" << std::endl;
