@@ -8,22 +8,15 @@
 #ifndef DERIVEDOBJECT_H_
 #define DERIVEDOBJECT_H_
 
-/*
- * DerivedObject.h
- *
- *  Created on: 4 Sep 2017
- *      Author: jornbrouwer
- */
-
-
 //STD includes
 #include <iostream>
 #include <ostream>
 
+#include "BaseObject.h"
 //Local includes
 #include "config.h"
 
-class DerivedObject
+class DerivedObject : public BaseObject
 {
 public:
 	//DerivedObject() = default; 	//Wanneer je standaard een constructor wilt hebben

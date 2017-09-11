@@ -6,16 +6,19 @@
 CPP_SRCS += \
 ../BaseObject.cpp \
 ../BaseObject_test.cpp \
+../DerivedObject.cpp \
 ../main.cpp 
 
 OBJS += \
 ./BaseObject.o \
 ./BaseObject_test.o \
+./DerivedObject.o \
 ./main.o 
 
 CPP_DEPS += \
 ./BaseObject.d \
 ./BaseObject_test.d \
+./DerivedObject.d \
 ./main.d 
 
 
