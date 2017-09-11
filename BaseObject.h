@@ -19,26 +19,19 @@ class BaseObject
 {
 public:
 	//BaseObject() = default; 	//Wanneer je standaard een constructor wilt hebben
-	//BaseObject() =delete; 		//Wanneer je standaard GEEN constructor wilt gebruiken
+	//BaseObject() = delete; 		//Wanneer je standaard GEEN constructor wilt gebruiken
 
-	BaseObject(); 			//Constructor
-
-	virtual ~BaseObject(); 	//Destructor
-
-	// Copy constructor
-	BaseObject(const BaseObject& aObject);
-
-	BaseObject(const std::string& aName);
-
-	// Name (get/set)
-	const std::string& getName() const;
-	void setName(const std::string& name);
+	BaseObject(); 							// Constructor
+	virtual ~BaseObject(); 					// Destructor
+	BaseObject(const BaseObject& aObject); 	// Copy constructor
+	BaseObject(const std::string& aName); 	// Overloaded constructor
+	const std::string& getName() const; 		// Name getter
+	void setName(const std::string& name); 	// Name set
 
 	// Operators
 	BaseObject& operator=(const BaseObject& obj);
-	bool operator==(const BaseObject& other) const;
+	bool operator==(const BaseObject& other) const; //(const) De instantie die de operator aanroept zal niet veranderen.
 	bool operator<(const BaseObject& rhs) const;
-
 
 private:
 	std::string name;

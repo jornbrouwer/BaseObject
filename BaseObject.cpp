@@ -15,7 +15,7 @@
 BaseObject::BaseObject()
 {
 	#ifdef DEBUG
-		std::cout << "base object generated" << std::endl;
+		std::cout << "standard bbase object generated" << std::endl;
 	#endif
 }
 
@@ -25,6 +25,9 @@ BaseObject::BaseObject()
 BaseObject::BaseObject(const std::string& aName) :
 		name(aName)
 {
+	#ifdef DEBUG
+		std::cout << "base object generated with name" << std::endl;
+	#endif
 	std::cout << __PRETTY_FUNCTION__ << " " << name << std::endl;
 }
 
@@ -44,6 +47,9 @@ BaseObject::~BaseObject()
 BaseObject::BaseObject(const BaseObject& aObject) :
 		name(aObject.name)
 {
+	#ifdef DEBUG
+		std::cout << "copy constructor used" << std::endl;
+	#endif
 	std::cout << __PRETTY_FUNCTION__ << " " << name << std::endl;
 }
 
@@ -64,10 +70,14 @@ void BaseObject::setName(const std::string& name)
 	this->name = name;
 }
 
-
+/*
+ *
+ */
 BaseObject& BaseObject::operator=(const BaseObject& obj)
 {
 	std::cout << __PRETTY_FUNCTION__ << " " << name << std::endl;
+
+	//Eerste wat je moet doen is checken of hij niet aan zich zelf assigned.
 	if (this != &obj)
 	{
 		name = obj.name;

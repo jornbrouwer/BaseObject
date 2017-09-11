@@ -20,6 +20,8 @@ int main(int argc, char **argv)
 
 	BaseObject a("A");
 	BaseObject b("B");
+	BaseObject c(b);
+
 
 
 	#ifdef DEBUG
