@@ -8,9 +8,10 @@
 #include "DerivedObject.h"
 
 /*
- *  Constructur
+ *  Constructor with initializing list
  */
-DerivedObject::DerivedObject(): BaseObject()
+DerivedObject::DerivedObject() :
+		BaseObject("Derived"),value(0)
 {
 	#ifdef DEBUG
 		std::cout << "Derived object generated" << std::endl;
@@ -18,11 +19,28 @@ DerivedObject::DerivedObject(): BaseObject()
 }
 
 /*
- * Overloaded constructor
+ * Overloaded with a short (VALUE)
  */
-DerivedObject::DerivedObject(const std::string& aName)
-	: name(aName)
+DerivedObject::DerivedObject(short aValue) : BaseObject("Derived"), value(aValue)
 {
+}
+
+/*
+ * Overloaded with a string (NAME)
+ */
+DerivedObject::DerivedObject(const std::string& aName) :
+			BaseObject("Derived"), value(0)
+{
+	name = aName;
+	std::cout << __PRETTY_FUNCTION__ << " " << name << std::endl;
+}
+
+/*
+ * getter for the value
+ */
+const short DerivedObject::getValue() const
+{
+	return value;
 }
 
 /*
@@ -38,27 +56,11 @@ DerivedObject::~DerivedObject()
 /*
  * Copy-constructor
  */
-DerivedObject::DerivedObject(const DerivedObject& aObject)
+DerivedObject::DerivedObject(const DerivedObject& aObject, short aValue) : BaseObject(aObject), value(aValue)
 {
 	#ifdef DEBUG
 		std::cout << "Derived Object : copy constructor used" << std::endl;
 	#endif
-}
-
-/*
- * Name getter
- */
-const std::string& DerivedObject::getName() const
-{
-	return name;
-}
-
-/*
- * Name setter
- */
-void DerivedObject::setName(const std::string& name)
-{
-	this->name = name;
 }
 
 /*
@@ -75,16 +77,25 @@ DerivedObject& DerivedObject::operator=(const DerivedObject& other)
 
 bool DerivedObject::operator==(const DerivedObject& other) const
 {
-	return name == other.name;
+	return BaseObject::operator ==(other);
 }
 
-bool DerivedObject::operator<(const DerivedObject& rhs) const
+bool DerivedObject::operator<(const DerivedObject& other) const
 {
-	return name <rhs.name;
+	if(BaseObject::operator==(other))
+	{
+		//TODO
+		return false;
+	}
+		else
+	{
+		return BaseObject::operator<(other);
+	}
 }
 
-std::ostream& operator<<(std::ostream& os, const DerivedObject& rhs)
+std::ostream& operator<<(std::ostream& os, const DerivedObject& obj)
 {
-	os << rhs.getName();
+	//operator<< (os, obj);
 	return os;
 }
+

@@ -23,26 +23,27 @@ public:
 	//DerivedObject() = delete; 		//Wanneer je standaard GEEN constructor wilt gebruiken
 
 	DerivedObject(); 							// Constructor
-	virtual ~DerivedObject(); 					// Destructor
-	DerivedObject(const DerivedObject& aObject); // Copy constructor
 	DerivedObject(const std::string& aName); 	// Overloaded constructor
-	const std::string& getName() const; 			// Name getter
-	void setName(const std::string& name); 		// Name set
+	DerivedObject(short value);
+	virtual ~DerivedObject(); 					// Destructor
+	DerivedObject(const DerivedObject& aObject, short aValue); // Copy constructor
 
 	// Operators
 	DerivedObject& operator=(const DerivedObject& obj);
 	bool operator==(const DerivedObject& other) const; //(const) De instantie die de operator aanroept zal niet veranderen.
 	bool operator<(const DerivedObject& rhs) const;
 
+	const short getValue() const;
+
 private:
 	std::string name;
-
+	short value;
 };
 
 /*
  * Wordt buiten de klasse gedefinieerd omdat anders de "std::ostream& os" door de compiler word gerekend als ook de RightHand Side.
  * We willen dat deze wordt geaccepteerd als lefthandsight
  */
-std::ostream& operator<<(std::ostream& os, const DerivedObject& rhs);
+std::ostream& operator<<(std::ostream& os, const DerivedObject& obj);
 
 #endif /* DERIVEDOBJECT_H_ */
