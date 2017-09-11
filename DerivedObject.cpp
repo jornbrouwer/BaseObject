@@ -5,6 +5,11 @@
  *      Author: jornbrouwer
  */
 
+#include "DerivedObject.h"
 
+DerivedObject::DerivedObject(): BaseObject("Derived")
+{
+
+}
 
 
