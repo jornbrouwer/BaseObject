@@ -24,10 +24,10 @@ public:
 
 	DerivedObject(); 							// Constructor
 	virtual ~DerivedObject(); 					// Destructor
-	DerivedObject(const DerivedObject& aObject); 	// Copy constructor
+	DerivedObject(const DerivedObject& aObject); // Copy constructor
 	DerivedObject(const std::string& aName); 	// Overloaded constructor
-	const std::string& getName() const; 		// Name getter
-	void setName(const std::string& name); 	// Name set
+	const std::string& getName() const; 			// Name getter
+	void setName(const std::string& name); 		// Name set
 
 	// Operators
 	DerivedObject& operator=(const DerivedObject& obj);
