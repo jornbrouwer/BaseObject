@@ -18,7 +18,9 @@ int main(int argc, char **argv)
 		std::cout << "program started" << std::endl;
 	#endif
 
-	BaseObject b;
+	BaseObject a("A");
+	BaseObject b("B");
+
 
 	#ifdef DEBUG
 		std::cout << "program ended" << std::endl;

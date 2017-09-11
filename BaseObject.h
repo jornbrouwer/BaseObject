@@ -10,6 +10,7 @@
 
 //STD includes
 #include <iostream>
+#include <ostream>
 
 //Local includes
 #include "config.h"
@@ -17,10 +18,10 @@
 class BaseObject
 {
 public:
-	BaseObject() = default;
-	//BaseObject() =delete;
+	//BaseObject() = default; 	//Wanneer je standaard een constructor wilt hebben
+	//BaseObject() =delete; 		//Wanneer je standaard GEEN constructor wilt gebruiken
 
-	//BaseObject(); 			//Constructor
+	BaseObject(); 			//Constructor
 
 	virtual ~BaseObject(); 	//Destructor
 
@@ -36,10 +37,18 @@ public:
 	// Operators
 	BaseObject& operator=(const BaseObject& obj);
 	bool operator==(const BaseObject& other) const;
+	bool operator<(const BaseObject& rhs) const;
+
 
 private:
 	std::string name;
 
 };
+
+/*
+ * Wordt buiten de klasse gedefinieerd omdat anders de "std::ostream& os" door de compiler word gerekend als ook de RightHand Side.
+ * We willen dat deze wordt geaccepteerd als lefthandsight
+ */
+std::ostream& operator<<(std::ostream& os, const BaseObject& rhs);
 
 #endif /* BASEOBJECT_H_ */

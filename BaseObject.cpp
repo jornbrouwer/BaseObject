@@ -80,3 +80,14 @@ bool BaseObject::operator==(const BaseObject& other) const
 	std::cout << __PRETTY_FUNCTION__ << " " << name << std::endl;
 	return name == other.name;
 }
+
+bool BaseObject::operator<(const BaseObject& rhs) const
+{
+	return name <rhs.name;
+}
+std::ostream& operator<<(std::ostream& os, const BaseObject& rhs)
+{
+	return os << rhs.getName();
+}
+
+
