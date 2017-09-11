@@ -19,19 +19,31 @@ int main(int argc, char **argv)
 		std::cout << "program started" << std::endl;
 	#endif
 
-	DerivedObject a;
+	BaseObject a("A");
 	std::cout << a.getName() << std::endl;
-	std::cout << a.getValue() << std::endl;
+	//std::cout << a.getValue() << std::endl;
 
-	DerivedObject b(a,100);
+	DerivedObject D;
+	D.setName("B");
+	D.setValue(10);
+
+	std:: cout <<"value is: " << D.getValue() <<std::endl;
+	std::cout << "D's name : " << D.getName() << std::endl;
+
+	//std::cout << "The name of object B" << b.getName() << std::endl;
+
+
+	DerivedObject b(D, 10);
+
+
 	//DerivedObject b(10);
-	std:: cout <<"value is: " << b.getValue() <<std::endl;
+	//std:: cout <<"value is: " << b.getValue() <<std::endl;
 
-	std::cout << "B: " << b.getName() << std::endl;
+	//std::cout << "B's name : " << b.getName() << std::endl;
 
-	std::cout << b << std::endl;
-	std::cout << "B == A :" << (b ==a) << std::endl;
-	std::cout << "B < A  :" << (b < a) << std::endl;
+	//std::cout << b << std::endl;
+	//std::cout << "B == A :" << (b ==a) << std::endl;
+	//std::cout << "B < A  :" << (b < a) << std::endl;
 
 	#ifdef DEBUG
 		std::cout << "program ended" << std::endl;

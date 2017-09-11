@@ -22,11 +22,12 @@ public:
 	//DerivedObject() = default; 	//Wanneer je standaard een constructor wilt hebben
 	//DerivedObject() = delete; 		//Wanneer je standaard GEEN constructor wilt gebruiken
 
-	DerivedObject(); 							// Constructor
-	DerivedObject(const std::string& aName); 	// Overloaded constructor
-	DerivedObject(short value);
-	virtual ~DerivedObject(); 					// Destructor
-	DerivedObject(const DerivedObject& aObject, short aValue); // Copy constructor
+	DerivedObject(); 											// Constructor
+	DerivedObject(const std::string& aName); 					// Overloaded constructor (STRING)
+	DerivedObject(short value);									// Overloaded constructor (SHORT)
+	DerivedObject(const DerivedObject& aObject, short aValue); 	// Copy constructor
+	virtual ~DerivedObject(); 									// Destructor
+
 
 	// Operators
 	DerivedObject& operator=(const DerivedObject& obj);
@@ -34,6 +35,7 @@ public:
 	bool operator<(const DerivedObject& rhs) const;
 
 	const short getValue() const;
+	void setValue(const short aValue);
 
 private:
 	std::string name;

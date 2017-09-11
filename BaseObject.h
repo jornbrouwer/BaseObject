@@ -22,9 +22,10 @@ public:
 	//BaseObject() = delete; 		//Wanneer je standaard GEEN constructor wilt gebruiken
 
 	BaseObject(); 							// Constructor
-	virtual ~BaseObject(); 					// Destructor
-	BaseObject(const BaseObject& aObject); 	// Copy constructor
 	BaseObject(const std::string& aName); 	// Overloaded constructor
+	BaseObject(const BaseObject& aObject); 	// Copy constructor
+	virtual ~BaseObject(); 					// Destructor
+
 	const std::string& getName() const; 		// Name getter
 	void setName(const std::string& name); 	// Name set
 

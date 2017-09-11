@@ -43,6 +43,11 @@ const short DerivedObject::getValue() const
 	return value;
 }
 
+void DerivedObject::setValue(short aValue)
+{
+	value = aValue;
+}
+
 /*
  * Destructor
  */
